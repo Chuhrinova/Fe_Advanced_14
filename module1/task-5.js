@@ -11,11 +11,10 @@ const priceChile = 250;
 const priceAustralia = 170;
 const priceIndia = 80;
 const priceJamaica = 120;
-
+let message;
 let input = prompt(promptLabel);
 const inLowerCase = input.toLowerCase();
-console.log(input.toLowerCase());
-let message;
+message = input.toLowerCase();
 
 if (input === null) {
   message = 'Очень жаль, приходите еще';
