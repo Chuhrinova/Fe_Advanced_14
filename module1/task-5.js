@@ -1,43 +1,49 @@
 'use strict';
 
-const CHINA = 'Китай';
-const CHILE = 'Чили';
-const AUSTRALIA = 'Австралия';
-const INDIA = 'Индия';
-const JAMAICA = 'Ямайка';
+const CHINA_MSG = 'Китай';
+const CHILE_MSG = 'Чили';
+const AUSTRALIA_MSG = 'Австралию';
+const INDIA_MSG = 'Индию';
+const JAMAICA_MSG = 'Ямайку';
+const CHINA = 'китай';
+const CHILE = 'чили';
+const AUSTRALIA = 'австралия';
+const INDIA = 'индия';
+const JAMAICA = 'ямайка';
 const promptLabel = `Выберите страну: ${CHINA}, ${CHILE}, ${AUSTRALIA}, ${INDIA}, ${JAMAICA}`;
 const priceChina = 100;
 const priceChile = 250;
 const priceAustralia = 170;
 const priceIndia = 80;
 const priceJamaica = 120;
-let message;
+
 let input = prompt(promptLabel);
-const inLowerCase = input.toLowerCase();
-message = input.toLowerCase();
+
+let message;
 
 if (input === null) {
   message = 'Очень жаль, приходите еще';
 } else {
+  const inLowerCase = input.toLowerCase();
   switch (inLowerCase) {
-    case CHINA.toLowerCase():
-      message = `Доставка в ${CHINA} будет стоить ${priceChina} кредитов`;
+    case CHINA:
+      message = `Доставка в ${CHINA_MSG} будет стоить ${priceChina} кредитов`;
       break;
 
-    case string(CHILE).toLowerCase():
-      message = `Доставка в ${CHILE} будет стоить ${priceChile} кредитов`;
+    case CHILE:
+      message = `Доставка в ${CHILE_MSG} будет стоить ${priceChile} кредитов`;
       break;
 
-    case string(AUSTRALIA).toLowerCase():
-      message = `Доставка в ${AUSTRALIA} будет стоить ${priceAustralia} кредитов`;
+    case AUSTRALIA:
+      message = `Доставка в ${AUSTRALIA_MSG} будет стоить ${priceAustralia} кредитов`;
       break;
 
-    case string(INDIA).toLowerCase():
-      message = `Доставка в ${INDIA} будет стоить ${priceIndia} кредитов`;
+    case INDIA:
+      message = `Доставка в ${INDIA_MSG} будет стоить ${priceIndia} кредитов`;
       break;
 
-    case string(JAMAICA).toLowerCase():
-      message = `Доставка в ${JAMAICA} будет стоить ${priceJamaica} кредитов`;
+    case JAMAICA:
+      message = `Доставка в ${JAMAICA_MSG} будет стоить ${priceJamaica} кредитов`;
       break;
 
     default:
