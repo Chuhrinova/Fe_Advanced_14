@@ -15,4 +15,4 @@ while (input !== null) {
 
   input = prompt('Введите число');
 }
-console.log = alert(`Общая сумма чисел равна ${total}`);
+alert(`Общая сумма чисел равна ${total}`);
