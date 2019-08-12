@@ -11,7 +11,6 @@ user.hobby = "javascript";
 user.premium = false;
 
 const keys = Object.keys(user);
-console.log(keys);
 for (const key of keys) {
   console.log(`${key} ${user[key]}`);
 }
