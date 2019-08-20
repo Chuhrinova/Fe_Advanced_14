@@ -1,9 +1,7 @@
 "use strict";
 
 class Storage {
-  constructor(
-    items = ["Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор"]
-  ) {
+  constructor(items = []) {
     this.items = items;
   }
   getItems() {
