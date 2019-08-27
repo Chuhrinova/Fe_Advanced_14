@@ -2,19 +2,19 @@
 
 class StringBuilder {
   constructor(value) {
-    this.value = value;
+    this._value = value;
   }
-  getValue() {
-    return this.value;
+  get value() {
+    return this._value;
   }
   append(str) {
-    this.value = this.value + str;
+    this._value = this.value + str;
   }
   prepend(str) {
-    this.value = str + this.value;
+    this._value = str + this.value;
   }
   pad(str) {
-    this.value = str + this.value + str;
+    this._value = str + this.value + str;
   }
 }
 

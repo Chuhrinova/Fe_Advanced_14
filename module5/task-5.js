@@ -5,11 +5,11 @@ class Car {
     console.log(car.maxSpeed, car.speed, car.isOn, car.distance, car.price);
   }
 
-  constructor({ speed = 0, price, maxSpeed, isOn = false, distance = 0 }) {
+  constructor({ price, maxSpeed }) {
     this.maxSpeed = maxSpeed;
-    this.speed = speed;
-    this.isOn = isOn;
-    this.distance = distance;
+    this.speed = 0;
+    this.isOn = false;
+    this.distance = 0;
     this.price = price;
   }
   set carsPrice(newPrice) {
@@ -32,9 +32,9 @@ class Car {
     if (value <= 0) {
       return;
     }
-    this.speed += value;
-
-    if (this.speed > this.maxSpeed) {
+    if (this.speed + value < this.maxSpeed) {
+      this.speed += value;
+    } else {
       this.speed = this.maxSpeed;
     }
   }
@@ -43,8 +43,9 @@ class Car {
     if (value <= 0) {
       return;
     }
-    this.speed -= value;
-    if (this.speed < 0) {
+    if (this.speed - value > 0) {
+      this.speed -= value;
+    } else {
       this.speed = 0;
     }
   }
@@ -63,15 +64,13 @@ mustang.accelerate(50);
 mustang.drive(2);
 
 Car.getSpecs(mustang);
-// maxSpeed: 200, speed: 50, isOn: true, distance: 100, price: 2000
 
 mustang.decelerate(20);
 mustang.drive(1);
 mustang.turnOff();
 
 Car.getSpecs(mustang);
-// maxSpeed: 200, speed: 0, isOn: false, distance: 120, price: 2000
 
-console.log(mustang.price); // 2000
+console.log(mustang.price);
 mustang.price = 4000;
-console.log(mustang.price); // 4000
+console.log(mustang.price);
