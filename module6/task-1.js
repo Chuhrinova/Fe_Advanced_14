@@ -123,13 +123,9 @@ const getInactiveUsers = users => {
 console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
 
 const getUserWithEmail = (users, email) => {
-  return users
-    .filter(user => {
-      return user.email === email;
-    })
-    .reduce((acc, user) => {
-      return user;
-    });
+  return users.find(user => {
+    return user.email === email;
+  });
 };
 
 console.log(getUserWithEmail(users, "shereeanthony@kog.com")); // {объект пользователя Sheree Anthony}
